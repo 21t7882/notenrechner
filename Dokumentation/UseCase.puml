@@ -1,0 +1,21 @@
+@startuml
+left to right direction
+actor "User" as user
+rectangle APP {
+  usecase "Main \n1. Button Note \n2. Button Durchschnitt" as UC1
+  usecase "Noten Eingabe \n1. eingabe Feld \n2. eingabe Feld" as UC2
+  usecase "Punkte eingabe \n1. eingabe Feld \n2. eingabe Feld" as UC3
+  usecase "Durchschnitt Berechnen \n Resultat" as UC4
+  usecase "Note Berechnen \n Resultat" as UC5
+  
+}
+user --> UC1 : Button 
+UC1 --> UC2 : Button
+UC1 --> UC3 : Button
+UC2 --> UC4 : Button
+UC3 --> UC5 : Button
+UC2 --> (UC1) #Black;line.dotted;text:black   : Zurück Button
+UC4 --> (UC2) #Black;line.dotted;text:black   : Zurück Button
+UC3 --> (UC1) #Black;line.dotted;text:black   : Zurück Button
+UC5 --> (UC3) #Black;line.dotted;text:black   : Zurück Button
+@enduml

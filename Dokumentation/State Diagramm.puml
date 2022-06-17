@@ -1,0 +1,64 @@
+@startuml
+
+
+Main -right-> Durchschnitt_Note
+Durchschnitt_Note -left-> Main
+Main : Auswahl menü 
+Main : 1. Button (Durchschnitt)
+Main: 2. Button (Note)
+note on link 
+ Mittels Button (Durchschnitt) zur neuen Activity
+end note
+
+
+
+
+
+Main -left-> Note_punkte
+Note_punkte -right-> Main
+note on link 
+ Mittels Button zur neuen Activity
+end note
+Note_punkte --> Note_berechnen
+note on link 
+ Mittels Button (Note_berechnen) zur neuen Activity
+end note
+Note_berechnen --> Note_punkte
+Note_punkte --> Toast_Note
+note on link 
+ Keine Eingabe = Toast
+end note
+Toast_Note --> Note_punkte
+
+Toast_Note: Toast(Keine Eingabe)
+Note_punkte: Eingabefeld (Max Punkte)
+Note_punkte: Eingabefeld (Eigene Punkte)
+Note_punkte: Button (Note Durchschnitt_berechnen)
+Note_berechnen: Eingabefeld(Result_Note)
+
+
+Durchschnitt_Note --> Durchschnitt_berechnen
+note on link 
+ Mittels Button (Durchschnitt_berechnen) zur neuen Activity
+end note
+Durchschnitt_berechnen --> Durchschnitt_Note
+Durchschnitt_Note --> Toast_Durchschnitt
+note on link 
+ Keine Eingabe = Toast
+end note
+Toast_Durchschnitt --> Durchschnitt_Note
+
+Durchschnitt_Note: Eingabefeld (Note_1)
+Durchschnitt_Note: Eingabefeld (Note_2)
+Durchschnitt_Note: Button (Note Durchschnitt_berechnen)
+
+Durchschnitt_berechnen: Ergebnisfeld (Result_Durchschnitt)
+
+Toast_Durchschnitt: Toast (Bitte nummer eingeben)
+
+
+
+
+
+@enduml
+*

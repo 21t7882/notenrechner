@@ -1,0 +1,49 @@
+@startuml Notenrechner
+class Main{
+    + button_durchschnitt_noten(Button)
+    + Onclick() : void
+    + button_noteberechnen_punkte(Button)
+    + Onclick() :void
+
+}
+class Note_punkte{
+    + static final(String EXTRA_MAX_PUNKTE)
+    + static final(String EXTRA_MIN_PUNKTE)
+    + open_noten_berechnen(button)
+    + Onclick() : void
+    + openNote() : void
+    + Max_punkte(EditText)
+    + Min_punkte(EditText)
+    + punkte_1(float)
+    + punkte_2(float)
+    +intent_note(intent)
+
+}
+
+class Durchschnitt_Note{
+    + static final(String EXTRA_NOTE1)
+    + static final(String EXTRA_NOTE2)
+    + open_durchschnitt_berechnen(button)
+    + Onclick() : void
+    + openDurchschnitt() : void
+    + note_1(EditText)
+    + note_2(EditText)
+    + note_1(float)
+    + note_2(float)
+    +intent_durchschnitt(intent)
+
+}
+
+class Durchschnitt_berechnen{
+    + intent_durchschnitt(intent)
+    + note_1(float)
+    + note_2(float)
+    +durchschnitt_result(Textview)
+}
+
+class Note_berechnen{
+    + intent_Note(intent)
+    + Max_punkt(float)
+    + Min_punkte(float)
+    +Note_result(Textview)
+}
